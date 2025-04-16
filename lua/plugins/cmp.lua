@@ -3,14 +3,18 @@ return {
   version = false, -- last release is way too old
   event = "InsertEnter",
   dependencies = {
+    "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-git",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/cmp-cmdline",
+    "saecki/crates.nvim",
   },
   config = function()
-    local cmp = require 'cmp'
+    local cmp = require("cmp")
 
     local has_words_before = function()
       if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
@@ -37,10 +41,10 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-Space>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ["<C-e>"] = cmp.mapping.abort(),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() and has_words_before() then
             cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
@@ -58,48 +62,57 @@ return {
           end
         end, { "i", "s" }),
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ['<C-s>'] = cmp.mapping.complete({
+        ["<C-s>"] = cmp.mapping.complete({
           config = {
             sources = {
-              { name = 'nvim_lsp' },
-            }
-          }
-        })
+              { name = "nvim_lsp" },
+            },
+          },
+        }),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
+        { name = "nvim_lsp" },
       }, {
-        { name = 'emoji' },
-        { name = 'path' },
-      })
+        { name = "emoji" },
+        { name = "path" },
+      }),
     })
 
-    cmp.setup.filetype('gitcommit', {
+    cmp.setup.filetype("gitcommit", {
       sources = cmp.config.sources({
-        { name = 'git' },
+        { name = "git" },
       }, {
-        { name = 'buffer' },
-        { name = 'tmux' },
-      })
+        { name = "buffer" },
+        { name = "tmux" },
+      }),
     })
     require("cmp_git").setup()
 
-    cmp.setup.cmdline({ '/', '?' }, {
+    cmp.setup.cmdline({ "/", "?" }, {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
-        { name = 'buffer' },
-        { name = 'path' },
-      }
+        { name = "buffer" },
+        { name = "path" },
+      },
     })
 
-    cmp.setup.cmdline(':', {
+    cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
-        { name = 'path' },
+        { name = "path" },
       }, {
-        { name = 'cmdline' }
+        { name = "cmdline" },
       }),
-      matching = { disallow_symbol_nonprefix_matching = false }
+      matching = { disallow_symbol_nonprefix_matching = false },
     })
+
+    require("crates").setup({
+      completion = {
+        cmp = {
+          enabled = true,
+        },
+      },
+    })
+    require("crates.completion.cmp").setup()
   end,
 }
