@@ -1,12 +1,12 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     options = {
       theme = "catppuccin",
     },
     {
-      lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    }
-  }
+      lualine_x = { "encoding", "fileformat", "filetype" },
+    },
+  },
 }

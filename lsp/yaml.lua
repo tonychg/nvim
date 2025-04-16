@@ -8,6 +8,7 @@ return {
       validate = true,
       hover = true,
       trace = { server = "debug" },
+      schemas = require("config.yaml-schemas"),
     },
   },
 }
