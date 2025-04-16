@@ -39,7 +39,7 @@ vim.g.have_nerd_font = true
 
 vim.opt.list = true
 vim.opt.listchars = { trail = "~", nbsp = "␣" }
-vim.lsp.set_log_level("off")
+-- vim.lsp.set_log_level("off")
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
@@ -54,6 +54,20 @@ vim.lsp.enable("luals")
 vim.lsp.enable("python")
 vim.lsp.enable("typos")
 vim.lsp.enable("yaml")
-vim.lsp.enable("helm")
+-- vim.lsp.enable("helm")
 
 require("config.keymap")
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  pattern = { "*.yaml", "*.yml" },
+  callback = function(event)
+    local client = vim.lsp.get_client_by_id(event.data.client_id)
+    local bufnr = vim.api.nvim_get_current_buf()
+    if not client then
+      return
+    end
+    if client.name == "yaml" then
+      require("config.matchers")(client, bufnr)
+    end
+  end,
+})
