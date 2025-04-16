@@ -17,7 +17,7 @@
   "lualine.nvim": { "branch": "master", "commit": "86fe39534b7da729a1ac56c0466e76f2c663dc42" },
   "nvim-autopairs": { "branch": "master", "commit": "4d74e75913832866aa7de35e4202463ddf6efd1b" },
   "nvim-cmp": { "branch": "main", "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9" },
-  "nvim-k8s-lsp": { "branch": "main", "commit": "85ad945f035ff91154479a871cc9b8590a4b364c" },
+  "nvim-k8s-lsp": { "branch": "fix/unmatch-api-version-without-group", "commit": "9670c38e8a43854e986f42bc49df6ce9b4e1df31" },
   "nvim-sops": { "branch": "main", "commit": "cb2209562d00ef8c6c88bdec836d9edb8fbb96ef" },
   "nvim-tree.lua": { "branch": "master", "commit": "6709463b2d18e77f7a946027917aa00d4aaed6f4" },
   "nvim-treesitter": { "branch": "master", "commit": "684eeac91ed8e297685a97ef70031d19ac1de25a" },
