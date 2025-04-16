@@ -1,5 +1,6 @@
 require("config.lazy")
 require("config.lsp")
+require("config.keymap")
 
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
@@ -50,3 +51,4 @@ vim.opt.termguicolors = true
 
 vim.lsp.enable("luals")
 vim.lsp.enable("python")
+vim.lsp.enable("typos")
