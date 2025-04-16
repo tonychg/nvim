@@ -55,6 +55,8 @@ vim.lsp.enable("python")
 vim.lsp.enable("typos")
 vim.lsp.enable("yaml")
 -- vim.lsp.enable("helm")
-require("kubernetes-lsp").setup({})
+require("nvim-k8s-lsp").setup({
+  kubernetes_version = "v1.32.3",
+})
 
 require("config.keymap")
