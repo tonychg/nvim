@@ -1,13 +1,28 @@
 return {
-  'stevearc/conform.nvim',
-  opts = {
-    formatters_by_ft = {
-      lua = { "stylua" },
-      python = { "isort", "black" },
-      rust = { "rustfmt", lsp_format = "fallback" },
-      nix = { "alejandra" }
+  "stevearc/conform.nvim",
+  opts = function()
+    require("conform").formatters.stylua = {
+      prepend_args = {
+        "--indent-type",
+        "Spaces",
+        "--indent-width",
+        "2",
+      },
     }
-  },
+    require("conform").setup({
+      formatters_by_ft = {
+        lua = { "stylua" },
+        python = { "isort", "black" },
+        rust = { "rustfmt", lsp_format = "fallback" },
+        nix = { "alejandra" },
+        yaml = { "yamlfmt" },
+      },
+      format_on_save = {
+        lsp_format = "fallback",
+        timeout_ms = 500,
+      },
+    })
+  end,
   config = function()
     vim.api.nvim_create_autocmd("BufWritePre", {
       pattern = "*",

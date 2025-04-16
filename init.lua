@@ -1,6 +1,4 @@
 require("config.lazy")
-require("config.lsp")
-require("config.keymap")
 
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
@@ -49,6 +47,12 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
+require("config.lsp")
+
 vim.lsp.enable("luals")
 vim.lsp.enable("python")
 vim.lsp.enable("typos")
+vim.lsp.enable("yaml")
+vim.lsp.enable("helm")
+
+require("config.keymap")

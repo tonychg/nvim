@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { buffer = ev.buf, desc = "LSP rename" })
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', '<space>F', function()
-      vim.lsp.buf.format { async = true }
+      require("conform").format({ bufnr = bufnr })
     end, { buffer = ev.buf, desc = "Format file" })
     if client.server_capabilities.inlayHintProvider then
       vim.keymap.set("n", "<space>h", function()
