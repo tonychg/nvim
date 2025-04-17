@@ -1,7 +1,6 @@
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
     local opts = { buffer = ev.buf }
@@ -13,8 +12,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if vim.bo.filetype == "helm" then
       vim.lsp.stop_client(vim.lsp.get_clients({ name = "yaml" }))
     end
-    -- Buffer local mappings.
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
     require("which-key").add({
       { "<leader>g", group = "Go to" },
     })

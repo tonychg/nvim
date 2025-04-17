@@ -1,12 +1,14 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {
-    options = {
-      theme = "catppuccin",
-    },
-    {
-      lualine_x = { "encoding", "fileformat", "filetype" },
-    },
-  },
+  config = function()
+    require("lualine").setup({
+      options = {
+        theme = "catppuccin",
+      },
+      sections = {
+        lualine_x = { "encoding", "fileformat", "filetype" },
+      },
+    })
+  end,
 }

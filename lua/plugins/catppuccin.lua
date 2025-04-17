@@ -8,17 +8,17 @@ return {
   },
   config = function()
     require("catppuccin").setup({
-      flavour = "macchiato", -- latte, frappe, macchiato, mocha
-      background = {         -- :h background
+      flavour = "macchiato",
+      background = {
         light = "latte",
         dark = "mocha",
       },
-      transparent_background = true, -- disables setting the background color.
-      show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
-      term_colors = false,           -- sets terminal colors (e.g. `g:terminal_color_0`)
-      no_italic = true,              -- Force no italic
-      no_bold = false,               -- Force no bold
-      no_underline = false,          -- Force no underline
+      transparent_background = true,
+      show_end_of_buffer = false,
+      term_colors = false,
+      no_italic = false,
+      no_bold = false,
+      no_underline = false,
       integrations = {
         cmp = true,
         diffview = true,
@@ -26,10 +26,9 @@ return {
         gitsigns = true,
         treesitter = true,
       },
-
     })
 
-    vim.cmd.colorscheme "catppuccin"
+    vim.cmd.colorscheme("catppuccin")
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })

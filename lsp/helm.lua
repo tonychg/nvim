@@ -2,7 +2,7 @@ return {
   cmd = { "helm_ls", "serve" },
   root_markers = { "values.yaml", "Chart.yaml" },
   settings = {
-    ['helm-ls'] = {
+    ["helm-ls"] = {
       yamlls = {
         enabled = true,
         enabledForFilesGlob = "*.{yaml,yml}",
@@ -11,9 +11,11 @@ return {
         config = {
           completion = true,
           hover = true,
-          schemas = require("config.yaml-schemas")
-        }
-      }
-    }
-  }
+          schemas = {
+            kubernetes = "templates/**",
+          },
+        },
+      },
+    },
+  },
 }
