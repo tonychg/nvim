@@ -9,9 +9,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local function desc(description)
       return { noremap = true, silent = true, buffer = bufnr, desc = description }
     end
+
     require("which-key").add({
       { "<leader>g", group = "Go to" },
     })
+
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = ev.buf, desc = "🧶 Go to declaration" })
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = ev.buf, desc = "🧶 Go to definition" })
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = ev.buf, desc = "🧶 Go to implementation" })
@@ -29,11 +31,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<space>F", function()
       require("conform").format({ bufnr = bufnr })
     end, { buffer = ev.buf, desc = "Format file" })
+
     if client.server_capabilities.inlayHintProvider then
       vim.keymap.set("n", "<space>h", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end, desc("[lsp] toggle inlay hints"))
     end
+
     vim.diagnostic.config({ virtual_text = true })
   end,
 })

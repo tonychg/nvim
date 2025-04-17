@@ -2,6 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   version = false, -- last release is way too old
   event = "InsertEnter",
+  enabled = false,
   dependencies = {
     "hrsh7th/vim-vsnip",
     "hrsh7th/cmp-nvim-lsp",
