@@ -11,9 +11,7 @@ return {
         config = {
           completion = true,
           hover = true,
-          schemas = {
-            kubernetes = "templates/**",
-          },
+          schemas = {},
         },
       },
     },

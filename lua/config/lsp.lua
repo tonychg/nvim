@@ -9,9 +9,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local function desc(description)
       return { noremap = true, silent = true, buffer = bufnr, desc = description }
     end
-    if vim.bo.filetype == "helm" then
-      vim.lsp.stop_client(vim.lsp.get_clients({ name = "yaml" }))
-    end
     require("which-key").add({
       { "<leader>g", group = "Go to" },
     })
