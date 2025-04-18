@@ -50,11 +50,12 @@ vim.opt.termguicolors = true
 
 require("config.lsp")
 
-vim.lsp.enable("luals")
+vim.lsp.enable("lua")
+vim.lsp.enable("nix")
 vim.lsp.enable("python")
 vim.lsp.enable("typos")
 vim.lsp.enable("yaml")
 vim.lsp.enable("helm")
-vim.lsp.enable("gopls")
+vim.lsp.enable("go")
 
 require("config.keymap")
