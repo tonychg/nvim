@@ -16,6 +16,7 @@ return {
         rust = { "rustfmt", lsp_format = "fallback" },
         nix = { "alejandra" },
         yaml = { "yamlfmt" },
+        go = { "gofmt" },
       },
       format_after_save = {
         lsp_format = "fallback",

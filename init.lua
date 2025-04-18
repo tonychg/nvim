@@ -55,5 +55,6 @@ vim.lsp.enable("python")
 vim.lsp.enable("typos")
 vim.lsp.enable("yaml")
 vim.lsp.enable("helm")
+vim.lsp.enable("gopls")
 
 require("config.keymap")
