@@ -17,8 +17,8 @@ return {
           columns = { { "label", "label_description", gap = 1 }, { "kind" } },
         },
       },
+      documentation = { auto_show = true },
     },
-    signature = { enabled = true },
     sources = {
       default = {
         "lsp",
@@ -46,7 +46,7 @@ return {
           opts = {
             dictionary_files = function()
               if vim.bo.filetype == "markdown" or vim.bo.filetype == "gitcommit" then
-                return {}
+                return { vim.fn.expand("~/.config/nvim/dictionary/words.dict") }
               end
               return {}
             end,
