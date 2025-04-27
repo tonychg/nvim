@@ -27,7 +27,7 @@ vim.opt.relativenumber = true
 -- vim.opt.sessionoptions = vim.o.sessionoptions .. ",tabpages,globals"
 vim.opt.ignorecase = true
 vim.schedule(function()
-  vim.opt.clipboard = "unnamedplus"
+	vim.opt.clipboard = "unnamedplus"
 end)
 vim.opt.swapfile = false
 vim.opt.laststatus = 3
@@ -75,5 +75,6 @@ vim.lsp.enable("yaml")
 vim.lsp.enable("helm")
 vim.lsp.enable("go")
 vim.lsp.enable("rust")
+vim.lsp.enable("terraform")
 
 require("config.keymap")

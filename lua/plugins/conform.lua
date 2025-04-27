@@ -10,6 +10,14 @@ return {
       },
     }
     require("conform").setup({
+      formatters = {
+        tofu = {
+          inherit = false,
+          command = "tofu",
+          args = { "fmt", "-" },
+          stdin = true,
+        },
+      },
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "isort", "black" },
@@ -17,6 +25,7 @@ return {
         nix = { "alejandra" },
         yaml = { "yamlfmt" },
         go = { "gofmt" },
+        terraform = { "tofu" },
       },
       format_after_save = {
         lsp_format = "fallback",
