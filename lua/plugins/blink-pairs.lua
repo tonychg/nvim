@@ -1,10 +1,9 @@
 return {
   "saghen/blink.pairs",
-  version = "*", -- (recommended) only required with prebuilt binaries
-
-  dependencies = "saghen/blink.download",
+  version = "*",
+  enabled = false,
+  -- dependencies = "saghen/blink.download",
   build = "cargo build --release",
-
   opts = {
     mappings = {
       enabled = true,

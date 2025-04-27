@@ -2,9 +2,10 @@ return {
   "hrsh7th/nvim-cmp",
   version = false, -- last release is way too old
   event = "InsertEnter",
-  enabled = false,
+  enabled = true,
   dependencies = {
     "hrsh7th/vim-vsnip",
+    "rafamadriz/friendly-snippets",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-git",
@@ -76,6 +77,15 @@ return {
       }, {
         { name = "emoji" },
         { name = "path" },
+      }),
+    })
+
+    cmp.setup.filetype("jjdescription", {
+      sources = cmp.config.sources({
+        { name = "git" },
+      }, {
+        { name = "buffer" },
+        { name = "tmux" },
       }),
     })
 
