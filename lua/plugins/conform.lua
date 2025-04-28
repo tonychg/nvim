@@ -11,9 +11,9 @@ return {
     }
     require("conform").setup({
       formatters = {
-        tofu = {
+        terraform = {
           inherit = false,
-          command = "tofu",
+          command = "terraform",
           args = { "fmt", "-" },
           stdin = true,
         },
@@ -25,7 +25,7 @@ return {
         nix = { "alejandra" },
         yaml = { "yamlfmt" },
         go = { "gofmt" },
-        terraform = { "tofu" },
+        terraform = { "terraform" },
       },
       format_after_save = {
         lsp_format = "fallback",
