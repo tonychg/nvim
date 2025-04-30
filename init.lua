@@ -24,7 +24,7 @@ vim.opt.incsearch = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.relativenumber = true
--- vim.opt.sessionoptions = vim.o.sessionoptions .. ",tabpages,globals"
+vim.opt.sessionoptions = vim.o.sessionoptions .. ",tabpages,globals"
 vim.opt.ignorecase = true
 vim.schedule(function()
   vim.opt.clipboard = "unnamedplus"
@@ -76,6 +76,7 @@ vim.lsp.enable("helm")
 vim.lsp.enable("go")
 vim.lsp.enable("rust")
 vim.lsp.enable("terraform")
+vim.lsp.enable("typescript")
 
 require("config.keymap")
 require("config.fasd")
