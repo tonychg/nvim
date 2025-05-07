@@ -13,7 +13,7 @@ return {
       formatters = {
         terraform = {
           inherit = false,
-          command = "terraform",
+          command = "tofu",
           args = { "fmt", "-" },
           stdin = true,
         },
