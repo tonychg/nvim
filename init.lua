@@ -5,6 +5,7 @@ vim.cmd("filetype on")
 vim.cmd("filetype indent on")
 
 vim.g.mapleader = " "
+vim.opt.colorcolumn = "80"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -77,6 +78,7 @@ vim.lsp.enable("go")
 vim.lsp.enable("rust")
 vim.lsp.enable("terraform")
 vim.lsp.enable("typescript")
+vim.lsp.enable("c")
 
 require("config.keymap")
 require("config.fasd")
