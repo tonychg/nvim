@@ -1,6 +1,6 @@
 -- Fasd functions
 local function go(pattern)
-  local match = vim.fn.system("fasd " .. pattern)
+  local match = vim.fn.system("zoxide query " .. pattern)
   vim.cmd("lcd " .. match)
 end
 
