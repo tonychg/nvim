@@ -65,6 +65,7 @@ vim.opt.cursorline = true
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
+vim.g.c_syntax_for_h = 1
 
 require("config.lsp")
 
