@@ -12,6 +12,9 @@ return {
       { "<leader>f", group = "🔍Search" },
     })
     vim.keymap.set("n", "<leader>ff", require("fzf-lua").files, { silent = true, desc = "🔍Search files" })
+    vim.keymap.set("n", "<leader>fr", function()
+      require("fzf-lua").files({ cwd = "~/" })
+    end, { silent = true, desc = "🔍Search files" })
     vim.keymap.set("n", "<leader>x", require("fzf-lua").quickfix, { silent = true, desc = "🔍Open quickfix" })
     vim.keymap.set("n", "<leader>fg", require("fzf-lua").live_grep, { silent = true, desc = "🔍Search live grep" })
     vim.keymap.set("n", "<leader>fb", require("fzf-lua").buffers, { silent = true, desc = "🔍Search buffers" })
