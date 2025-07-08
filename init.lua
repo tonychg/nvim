@@ -11,7 +11,6 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
-vim.opt.number = true
 vim.opt.exrc = true
 vim.opt.secure = true
 vim.opt.termguicolors = true
@@ -24,7 +23,6 @@ vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.relativenumber = true
 vim.opt.sessionoptions = vim.o.sessionoptions .. ",tabpages,globals"
 vim.opt.ignorecase = true
 vim.schedule(function()
@@ -40,6 +38,10 @@ vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
+
+-- Disable line numbers
+vim.opt.number = false
+vim.opt.relativenumber = false
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
