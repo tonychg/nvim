@@ -1,9 +1,5 @@
 require("config.lazy")
 
-vim.cmd("syntax on")
-vim.cmd("filetype on")
-vim.cmd("filetype indent on")
-
 vim.g.mapleader = " "
 vim.opt.colorcolumn = "80"
 vim.opt.tabstop = 4
@@ -85,3 +81,7 @@ vim.lsp.enable("c")
 
 require("config.keymap")
 require("config.fasd")
+
+vim.cmd("syntax on")
+vim.cmd("filetype on")
+vim.cmd("filetype indent on")
