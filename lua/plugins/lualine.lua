@@ -4,7 +4,7 @@ return {
   config = function()
     require("lualine").setup({
       options = {
-        theme = "simplecolors",
+        theme = "auto",
       },
       sections = {
         lualine_x = { "encoding", "fileformat", "filetype" },
