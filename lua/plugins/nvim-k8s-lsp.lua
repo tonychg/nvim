@@ -1,5 +1,5 @@
 return {
-  dir = "~/ghq/github.com/tonychg/nvim-k8s-lsp",
+  "tonychg/nvim-k8s-lsp",
   config = function()
     require("nvim-k8s-lsp").setup({
       kubernetes_version = "v1.32.3",

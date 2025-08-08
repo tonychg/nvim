@@ -1,5 +1,5 @@
 return {
-  cmd = { "/home/achiny/ghq/github.com/mrjosh/helm-ls/bin/helm_ls", "serve" },
+  cmd = { "helm_ls", "serve" },
   root_markers = { "values.yaml", "Chart.yaml" },
   settings = {
     ["helm-ls"] = {
