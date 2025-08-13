@@ -1,5 +1,5 @@
 return {
-  "ibhagwan/fzf-lua",
+  "tonychg/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   opts = {
     files = {
@@ -16,6 +16,13 @@ return {
       require("fzf-lua").files({ cwd = "~/" })
     end, { silent = true, desc = "🔍Search files" })
     vim.keymap.set("n", "<leader>x", require("fzf-lua").quickfix, { silent = true, desc = "🔍Open quickfix" })
+    vim.keymap.set(
+      "n",
+      "<leader>fh",
+      require("fzf-lua").command_history,
+      { silent = true, desc = "🔍Search command history" }
+    )
+    vim.keymap.set("n", "<leader>z", require("fzf-lua").zoxide, { silent = true, desc = "🔍Search zoxide history" })
     vim.keymap.set("n", "<leader>fg", require("fzf-lua").live_grep, { silent = true, desc = "🔍Search live grep" })
     vim.keymap.set("n", "<leader>fb", require("fzf-lua").buffers, { silent = true, desc = "🔍Search buffers" })
     vim.keymap.set("n", "<leader>fa", function()
