@@ -18,6 +18,12 @@ return {
     vim.keymap.set("n", "<leader>x", require("fzf-lua").quickfix, { silent = true, desc = "🔍Open quickfix" })
     vim.keymap.set(
       "n",
+      "<leader>fc",
+      require("fzf-lua").grep_cword,
+      { silent = true, desc = "🔍Search current word" }
+    )
+    vim.keymap.set(
+      "n",
       "<leader>fh",
       require("fzf-lua").command_history,
       { silent = true, desc = "🔍Search command history" }
