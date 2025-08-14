@@ -34,5 +34,3 @@ vim.keymap.set("n", "<leader>cp", ":let @+ = expand('%')<CR>", { desc = "Copy cu
 vim.keymap.set("n", "<leader>dl", function()
   vim.lsp.enable(vim.bo.filetype, false)
 end, { desc = "Copy current file path", silent = true })
-
-vim.keymap.set("n", "<leader>k", require("kubectl").toggle, { desc = "Open Kubectl", noremap = true, silent = true })

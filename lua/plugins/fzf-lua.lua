@@ -11,6 +11,12 @@ return {
     require("which-key").add({
       { "<leader>f", group = "🔍Search" },
     })
+    vim.keymap.set(
+      "n",
+      "<leader>gb",
+      require("fzf-lua").git_branches,
+      { silent = true, desc = "🔍Search git branches" }
+    )
     vim.keymap.set("n", "<leader>ff", require("fzf-lua").files, { silent = true, desc = "🔍Search files" })
     vim.keymap.set("n", "<leader>fr", function()
       require("fzf-lua").files({ cwd = "~/" })
