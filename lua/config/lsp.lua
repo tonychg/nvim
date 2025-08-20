@@ -37,7 +37,5 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
       end, desc("[lsp] toggle inlay hints"))
     end
-
-    vim.diagnostic.config({ virtual_text = true })
   end,
 })

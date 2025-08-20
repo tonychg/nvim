@@ -65,6 +65,12 @@ vim.opt.cursorline = true
 vim.opt.inccommand = "split"
 vim.g.c_syntax_for_h = 1
 
+-- https://gpanders.com/blog/whats-new-in-neovim-0-11/
+vim.diagnostic.config({
+  -- Use the default configuration
+  virtual_lines = true,
+})
+
 require("config.lsp")
 
 vim.lsp.enable("lua")
