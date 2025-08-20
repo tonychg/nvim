@@ -2,7 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   version = false, -- last release is way too old
   event = "InsertEnter",
-  enabled = false,
+  enabled = true,
   dependencies = {
     "hrsh7th/vim-vsnip",
     "rafamadriz/friendly-snippets",

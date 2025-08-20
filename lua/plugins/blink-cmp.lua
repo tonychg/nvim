@@ -1,7 +1,7 @@
 return {
   "Saghen/blink.cmp",
   event = "VimEnter",
-  enabled = true,
+  enabled = false,
   dependencies = {
     -- "moyiz/blink-emoji.nvim",
     -- "Kaiser-Yang/blink-cmp-dictionary",
