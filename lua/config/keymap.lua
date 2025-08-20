@@ -40,3 +40,44 @@ vim.keymap.set("n", "<leader>cp", ":let @+ = expand('%')<CR>", { desc = "Copy cu
 vim.keymap.set("n", "<leader>dl", function()
   vim.lsp.enable(vim.bo.filetype, false)
 end, { desc = "Copy current file path", silent = true })
+
+require("which-key").add({
+  { "<leader>g", group = "Git" },
+})
+require("which-key").add({
+  { "<leader>gp", group = "Git push" },
+})
+require("which-key").add({
+  { "<leader>gc", group = "Git commit" },
+})
+require("which-key").add({
+  { "<leader>gf", group = "Git fetch" },
+})
+
+vim.keymap.set("n", "<leader>gpp", "<cmd>Git push<cr>", { desc = "Git push" })
+vim.keymap.set("n", "<leader>gpf", "<cmd>Git push --force-with-lease<cr>", { desc = "Git push force" })
+vim.keymap.set("n", "<leader>gpm", "<cmd>Git push -o merge_request.create<cr>", { desc = "Git push & Create MR" })
+vim.keymap.set("n", "<leader>gaa", "<cmd>Git add .<cr>", { desc = "Git add" })
+vim.keymap.set("n", "<leader>gap", "<cmd>Git add -p<cr>", { desc = "Git add" })
+vim.keymap.set("n", "<leader>gcc", "<cmd>vertical Git commit<cr>", { desc = "Git commit" })
+vim.keymap.set("n", "<leader>gca", "<cmd>vertical Git commit --amend<cr>", { desc = "Git commit amend" })
+vim.keymap.set("n", "<leader>gll", "<cmd>Git pull<cr>", { desc = "Git pull" })
+vim.keymap.set("n", "<leader>glp", "<cmd>vertical Git log -p %<cr>", { desc = "Git log patch current file" })
+vim.keymap.set("n", "<leader>gfa", "<cmd>Git fetch --all --prune<cr>", { desc = "Git fetch all" })
+
+vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", { desc = "Diagnostics (Trouble)" })
+vim.keymap.set(
+  "n",
+  "<leader>xX",
+  "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+  { desc = "Buffer Diagnostics (Trouble)" }
+)
+vim.keymap.set("n", "<leader>cs", "<cmd>Trouble symbols toggle focus=false<cr>", { desc = "Symbols (Trouble)" })
+vim.keymap.set(
+  "n",
+  "<leader>cl",
+  "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+  { desc = "LSP Definitions / references / ... (Trouble)" }
+)
+vim.keymap.set("n", "<leader>xL", "<cmd>Trouble loclist toggle<cr>", { desc = "Location List (Trouble)" })
+vim.keymap.set("n", "<leader>xQ", "<cmd>Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)" })
