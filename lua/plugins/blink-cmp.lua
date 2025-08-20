@@ -1,62 +1,32 @@
 return {
   "Saghen/blink.cmp",
-  enabled = false,
+  event = "VimEnter",
+  enabled = true,
   dependencies = {
     -- "moyiz/blink-emoji.nvim",
     -- "Kaiser-Yang/blink-cmp-dictionary",
-    "rafamadriz/friendly-snippets",
+    -- "rafamadriz/friendly-snippets",
   },
   version = "1.*",
-  -- opts_extend = { "sources.default" },
   opts = {
     keymap = { preset = "enter" },
     appearance = {
       nerd_font_variant = "mono",
     },
     completion = {
-      -- menu = {
-      --   min_width = 1,
-      --   draw = {
-      --     columns = { { "label", "label_description", gap = 1 }, { "kind" } },
-      --   },
-      -- },
-      documentation = { auto_show = false },
+      -- By default, you may press `<c-space>` to show the documentation.
+      -- Optionally, set `auto_show = true` to show the documentation after a delay.
+      documentation = { auto_show = false, auto_show_delay_ms = 500 },
     },
-    fuzzy = { implementation = "prefer_rust_with_warning" },
+    fuzzy = { implementation = "lua" },
+    signature = { enabled = true },
     sources = {
       default = {
         "lsp",
         "path",
-        "snippets",
         "buffer",
-        -- "emoji",
-        -- "dictionary",
+        -- "snippets",
       },
-      -- providers = {
-      --   emoji = {
-      --     module = "blink-emoji",
-      --     name = "Emoji",
-      --     score_offset = 15, -- Tune by preference
-      --     opts = { insert = true }, -- Insert emoji (default) or complete its name
-      --     should_show_items = function()
-      --       return vim.tbl_contains({ "gitcommit", "markdown" }, vim.o.filetype)
-      --     end,
-      --   },
-      --   dictionary = {
-      --     module = "blink-cmp-dictionary",
-      --     name = "Dict",
-      --     min_keyword_length = 3,
-      --     max_items = 10,
-      --     opts = {
-      --       dictionary_files = function()
-      --         if vim.bo.filetype == "markdown" or vim.bo.filetype == "gitcommit" then
-      --           return { vim.fn.expand("~/.config/nvim/dictionary/words.dict") }
-      --         end
-      --         return {}
-      --       end,
-      --     },
-      --   },
-      -- },
     },
   },
 }
