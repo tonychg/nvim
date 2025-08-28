@@ -3,6 +3,11 @@ return {
   root_markers = { "values.yaml", "Chart.yaml" },
   settings = {
     ["helm-ls"] = {
+      valuesFiles = {
+        mainValuesFile = "values.yaml",
+        lintOverlayValuesFile = "values.lint.yaml",
+        additionalValuesFilesGlobPattern = "values*.yaml",
+      },
       yamlls = {
         enabled = true,
         enabledForFilesGlob = "*.{yaml,yml}",
