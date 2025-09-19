@@ -1,6 +1,6 @@
 return {
   "tonychg/simplecolors",
-  enabled = false,
+  enabled = true,
   config = function()
     vim.cmd.colorscheme("simplecolors")
   end,
