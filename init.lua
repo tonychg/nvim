@@ -31,6 +31,9 @@ vim.opt.eol = true
 -- Decrease update time
 vim.opt.updatetime = 250
 
+-- Trigger `autoread` when files changes on disk
+vim.opt.autoread = true
+
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
