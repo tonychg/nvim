@@ -33,6 +33,10 @@ vim.opt.updatetime = 250
 
 -- Trigger `autoread` when files changes on disk
 vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
 
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
