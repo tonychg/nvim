@@ -1,6 +1,7 @@
 return {
   cmd = { "helm_ls", "serve" },
   root_markers = { "values.yaml", "Chart.yaml" },
+  filetypes = { "helm" },
   settings = {
     ["helm-ls"] = {
       valuesFiles = {

@@ -2,7 +2,7 @@ return {
   "hrsh7th/nvim-cmp",
   version = false, -- last release is way too old
   event = "InsertEnter",
-  enabled = true,
+  enabled = false,
   dependencies = {
     "hrsh7th/vim-vsnip",
     "rafamadriz/friendly-snippets",
@@ -17,6 +17,11 @@ return {
   },
   config = function()
     local cmp = require("cmp")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+    -- Disable cmp snippet
+    -- https://github.com/hrsh7th/nvim-cmp/issues/1129
+    capabilities.textDocument.completion.completionItem.snippetSupport = false
 
     local has_words_before = function()
       if vim.api.nvim_buf_get_option(0, "buftype") == "prompt" then
