@@ -3,9 +3,7 @@ return {
   event = "VimEnter",
   enabled = true,
   dependencies = {
-    -- "moyiz/blink-emoji.nvim",
-    -- "Kaiser-Yang/blink-cmp-dictionary",
-    -- "rafamadriz/friendly-snippets",
+    "rafamadriz/friendly-snippets",
   },
   version = "1.*",
   opts = {
@@ -13,12 +11,19 @@ return {
     appearance = {
       nerd_font_variant = "mono",
     },
+    cmdline = { enabled = false },
     completion = {
-      -- By default, you may press `<c-space>` to show the documentation.
-      -- Optionally, set `auto_show = true` to show the documentation after a delay.
-      documentation = { auto_show = false, auto_show_delay_ms = 500 },
+      list = { selection = { preselect = true, auto_insert = true } },
+      documentation = { auto_show = true, auto_show_delay_ms = 500 },
     },
-    fuzzy = { implementation = "lua" },
+    fuzzy = {
+      implementation = "prefer_rust_with_warning",
+      sorts = {
+        "score", -- Primary sort: by fuzzy matching score
+        "sort_text", -- Secondary sort: by sortText field if scores are equal
+        "label", -- Tertiary sort: by label if still tied
+      },
+    },
     signature = { enabled = true },
     sources = {
       default = {

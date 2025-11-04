@@ -10,12 +10,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       return { noremap = true, silent = true, buffer = bufnr, desc = description }
     end
 
-    -- Neovim v0.12+
-    -- Native autocompletion trigger
-    if client ~= nil and client:supports_method("textDocument/completion") then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-
     require("which-key").add({
       { "<leader>g", group = "Go to" },
     })

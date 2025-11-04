@@ -40,5 +40,6 @@ return {
     vim.keymap.set("n", "<leader>fa", function()
       require("fzf-lua").files({ cwd = "~/ghq" })
     end, { silent = true, desc = "🔍Search all git files" })
+    vim.keymap.set("n", "<space>tl", require("fzf-lua").tabs, { desc = "List tabs" })
   end,
 }
